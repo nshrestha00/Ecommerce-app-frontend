@@ -9,13 +9,15 @@ export const ShopContext= createContext();
 const ShopContextProvider= (props)=>{
     const currency ='$';
     const delivery_fee=10;
-    const backendUrl=import.meta.env.VITE_BACKEND_URL
+    const backendUrl=import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:4000'
     const [search, setSearch]= useState('');
     const [showSearch, setShowSearch]= useState(false);
     const [cartItems,setCartItems]=useState({});
     const [products, setProducts]= useState([]);
     const [token,setToken]=useState('');
     const navigate=useNavigate();
+
+    console.log("backend url: ", backendUrl);
 
     const addToCart= async (itemId, size)=>{
         if (!size){
@@ -49,6 +51,7 @@ const ShopContextProvider= (props)=>{
                         totalCount +=cartItems[items][item];
                     }
                 } catch (error) {
+                    console.log(error)
                     
                 }
             }
@@ -74,6 +77,7 @@ const ShopContextProvider= (props)=>{
                        totalAmount+=itemInfo.price*cartItems[items][item]; 
                     }
                 } catch (error) {
+                    console.log(error)
                     
                 }
             }
