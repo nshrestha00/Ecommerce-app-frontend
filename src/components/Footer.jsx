@@ -6,7 +6,7 @@ const Footer = () => {
             <div>
                 <img src={assets.logo} alt="" className="mb-5 w-32" />
                 <p className="w-full md:w-2/3 text-gray-600">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, temporibus eum?
+                Forever offers the latest in fashion, delivering timeless pieces and trend-setting styles to elevate your wardrobe. Explore our collection for effortless style.
                 </p>
             </div>
 

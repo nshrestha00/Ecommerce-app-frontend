@@ -90,8 +90,8 @@ const Product = () => {
         </div>
 
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam quisquam saepe voluptatum. Ab totam, nemo iusto modi quaerat omnis velit? Quo sunt, eligendi iste consequuntur officiis culpa fuga. Modi fugiat ipsa commodi exercitationem magnam.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe id blanditiis at non itaque voluptatibus cum iusto quos voluptatem ipsa nemo, nostrum placeat.</p>
+          <p>Crafted with attention to detail, this piece combines comfort and style, making it a perfect addition to your wardrobe. With premium materials and a flattering fit, it’s designed to elevate your look for any occasion.</p>
+          <p>Customers are loving this product! See why it’s a favorite among many. From its stylish design to its excellent quality, the feedback speaks for itself.</p>
         </div>
       </div>
 
