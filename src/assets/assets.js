@@ -72,10 +72,18 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import slide_one from './slide_one.png'
+import slide_two from './slide_two.png'
+import slide_three from './slide_three.png'
+import slide_four from './slide_four.png'
 
 export const assets = {
     logo,
     hero_img,
+    slide_one,
+    slide_two,
+    slide_three,
+    slide_four,
     cart_icon,
     dropdown_icon,
     exchange_icon,

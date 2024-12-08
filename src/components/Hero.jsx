@@ -1,28 +1,40 @@
 import { assets } from "../assets/assets";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const Hero = () => {
+  const slides = [
+    <div key="1" className="item">
+      <img className="max-w-full h-[400px] object-cover object-center rounded-lg" src={assets.slide_one} alt="" />
+    </div>,
+    <div key="2" className="item">
+      <img className="max-w-full h-[400px] object-cover object-center rounded-lg" src={assets.slide_two} alt="" />
+    </div>,
+    <div key="3" className="item">
+      <img className="max-w-full h-[400px] object-cover object-center rounded-lg" src={assets.slide_three} alt="" />
+    </div>,
+     <div key="4" className="item">
+     <img className="max-w-full h-[400px] object-cover object-center rounded-lg" src={assets.slide_four} alt="" />
+   </div>
+  ];
+
   return (
-    <div className="flex flex-col sm:flex-row border border-gray-400">
-
-      {/* Hero left side */}
-      <div className="w-full sm:w-1/2 bg-white flex items-center justify-center py-10 sm:py-0">
-        <div className="text-[#414141] px-5">
-          <div className="flex items-center gap-2">
-            <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
-            <p className="font-medium text-sm md:text-base">OUR BESTSELLERS</p>
-          </div>
-          <h1 className="prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed">Latest Arrivals</h1>
-          <div className="flex items-center gap-2">
-            <p className="font-semibold text-sm md:text-base">SHOP NOW</p>
-            <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero right side */}
-      <div className="w-full sm:w-1/2 bg-[#fddde2] flex items-center justify-center">
-        <img className="max-w-full h-auto" src={assets.hero_img} alt="Hero" />
-      </div>
+    <div className="relative w-full h-[400px]">
+      <AliceCarousel
+        autoPlay
+        autoPlayInterval={1000}
+        infinite
+        disableButtonsControls
+        items={slides}
+        responsive={{
+          0: {
+            items: 1,
+          },
+          768: {
+            items: 1,
+          },
+        }}
+      />
     </div>
   );
 };
