@@ -9,7 +9,10 @@ export const ShopContext= createContext();
 const ShopContextProvider= (props)=>{
     const currency ='$';
     const delivery_fee=10;
-    const backendUrl='https://ecommerce-app-backend-uymb.onrender.com'
+    const backendUrl = import.meta.env.DEV 
+    ? import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+    : 'https://ecommerce-app-backend-uymb.onrender.com';    
+    
     const [search, setSearch]= useState('');
     const [showSearch, setShowSearch]= useState(false);
     const [cartItems,setCartItems]=useState({});
