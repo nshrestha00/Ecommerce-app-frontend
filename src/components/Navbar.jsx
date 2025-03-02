@@ -1,4 +1,4 @@
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { assets } from '../assets/assets';
 import { useContext, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
@@ -24,14 +24,14 @@ const Navbar = () => {
    };
 
    return (
-      <div className="flex items-center justify-between py-5 font-medium tw-border tw-border-slate-200 sticky top-0 z-50 bg-white overflow-x-hidden w-full">
+      <div className="flex items-center justify-between py-5 font-medium border border-slate-200 sticky top-0 z-40 bg-white w-full">
          <Link to="/">
             <img src={assets.logo} alt="" className="w-32" />
          </Link>
 
          <DesktopNavbar />
 
-         <div className="flex items-center gap-6 ">
+         <div className="flex items-center gap-6">
             <img
                onClick={() => setShowSearch(true)}
                src={assets.search_icon}
@@ -83,16 +83,19 @@ const Navbar = () => {
             />
          </div>
 
-         <div
-            className={`absolute top-[4rem] bottom-0  bg-white transition-all ${visible ? 'w-full right-0' : 'w-0 -right-[100%] '}`}
-         >
-            <MobileNavbar setVisible={setVisible} />
-         </div>
+         {/* Mobile navigation overlay */}
+         {visible && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 sm:hidden" onClick={() => setVisible(false)}>
+               <div 
+                  className="absolute top-0 right-0 h-full w-3/4 max-w-xs bg-white" 
+                  onClick={(e) => e.stopPropagation()}
+               >
+                  <MobileNavbar setVisible={setVisible} />
+               </div>
+            </div>
+         )}
       </div>
    ); 
 };
 
 export default Navbar;
-
-
-
